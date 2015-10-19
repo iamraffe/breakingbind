@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{!! csrf_token() !!}"/>
-    <title>Súmate al efecto mariposa</title>
+    <title>Breaking Bind</title>
     @yield('css')
     <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -20,11 +20,11 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="page-top" class='{{ $bodyClass or "index" }}'>
+<body id="page-top" class='terms-and-conditions'>
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 header-container">
-            <h1 class="header-title text-center"><a href="{{ url('/') }}">Súmate al Efecto Mariposa</a></h1>
+            <h1 class="header-title text-center"><a href="{{ url('/') }}">Breaking Bind</a></h1>
             <h2 class="header-title text-center">Condiciones de uso</h2>
         </div>
     </div>
@@ -132,36 +132,7 @@
         </div>
     </div>
   </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">&copy; AECAT, 2015</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="https://twitter.com/aecat_es"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="https://www.facebook.com/asociacionaecat"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="https://www.youtube.com/user/AECATiroides"><i class="fa fa-youtube"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="{{ url('/terms-and-conditions') }}">Condiciones de uso</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Scripts -->
-    {!! HTML::script('js/all.js') !!}
-    <script>
-        $('#flash-overlay-modal').modal();
-    </script>
+    @include('partials._footer')
     @yield('scripts')
 </body>
 </html>

@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Asiste</h2>
-                    <h3 class="section-subheading text-muted">El Sábado 31 de Octubre en Argüelles desde las 11.00 PM hasta las 4.00 AM, si sobrevives</h3>
+                    <h3 class="section-subheading text-muted">El Sábado 31 de Octubre en Argüelles desde las 11.00 PM hasta las 4.00 AM, si sobrevives.</h3>
                 </div>
             </div>
             <div class="row">
@@ -89,19 +89,19 @@
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
-        {{--                             <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-6">
-                                                {!! HTML::image('img/paypal-logo.png', 'PayPal', ['class' => 'img-responsive img-centered paypal-logo']) !!}
+                                                {!! HTML::image('img/paypal-logo.svg', 'PayPal', ['class' => 'img-responsive img-centered paypal-logo']) !!}
                                                 <label class="radio-inline"><input type="radio" name="payment" value="paypal" required>PayPal</label>
                                             </div>
                                             <div class="col-md-6">
-                                                {!! HTML::image('img/wire-transfer.png', 'Transferencia Bancaria', ['class' => 'img-responsive img-centered wire-transfer']) !!}
-                                                <label class="radio-inline"><input type="radio" name="payment" value="transfer" disabled>Transferencia Bancaria</label>
+                                                {!! HTML::image('img/wire-transfer.svg', 'Transferencia Bancaria', ['class' => 'img-responsive img-centered wire-transfer']) !!}
+                                                <label class="radio-inline"><input type="radio" name="payment" value="transfer">Transferencia Bancaria</label>
                                             </div>
                                             <p class="help-block text-danger"></p>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
                                         <div id="registrationSuccess"></div>
@@ -166,10 +166,17 @@
             </div>
         </div>
     </section>
+    <aside>
+        <iframe id="map-canvas"
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPx86ikIoQg0R41r4yzvYgJM&key=AIzaSyAlnKDtzJoIfHbA99KRyXgrxZc134M53wk" allowfullscreen></iframe>
+    </aside>
 @endsection
 
 @section('scripts')
+
     <script type="text/javascript">
+
+
         $(function() {
             $('button.trigger-zombie-hands').hover(function(){
                 $('img.zombie-hands').addClass('animated slideInUp').css('display', 'block');
