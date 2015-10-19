@@ -144,6 +144,14 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //Mine
+        Collective\Html\HtmlServiceProvider::class,
+        LaraParse\ParseServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -193,6 +201,12 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
+        'Flash' => Laracasts\Flash\Flash::class,
+        'Paypalpayment'   => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

@@ -1,0 +1,108 @@
+@import '../font-awesome/font-awesome.less';
+@import 'less/AdminLTE.less';
+@import 'less/skins/_all-skins.less';
+@import 'select2/select2.less';
+@import 'radials/radials.less';
+@import (inline) 'ioncons.css';
+@import (inline) 'datatables.css';
+@import (inline) 'dataTables.responsive.css';
+
+@red: #D64541;
+@yellow: #F1C40F;
+@light-gray: #808080;
+.red-background{
+    background-color: @red !important;
+    color: white !important;
+}
+
+.red-color{
+    color: @red !important;
+}
+
+.yellow-background{
+    background-color: @yellow !important;
+    color: white !important;
+}
+
+.yellow-color{
+    color: @yellow !important;
+}
+
+.text-uppercase{
+    text-transform: uppercase !important;
+}
+
+.light-gray-color{
+    color: @light-gray !important;
+}
+
+.login-page{
+    background-color: @yellow;
+    .fa{
+        .red-color;
+    }
+}
+
+#loading{
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    display: none;
+
+    .progress-bar{
+        width: 75%;
+        height: 20px;
+        position: absolute;
+        left: 12.5%;
+        top: 35%;
+    }
+}
+
+textarea.tinymce{
+    height: 500px;
+}
+
+.btn-file, input[type=text], input[type=password], input[type=email], textarea[type=text]{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid @red;
+    color: #999;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: left;
+    text-transform: none;
+    font-size: 13px;
+
+    &:focus{
+      outline: none;
+    }
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    //font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.services-page{
+    .sliderImagesContainer{
+        display: none;
+    }
+}
