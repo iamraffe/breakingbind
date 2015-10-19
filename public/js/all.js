@@ -1177,7 +1177,7 @@ $(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
             var $anchor = $(this);
             $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
+                scrollTop: $($anchor.attr('href')).offset().top + -10
             }, 1500, 'easeInOutExpo');
             event.preventDefault();
         }

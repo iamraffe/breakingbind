@@ -2,13 +2,13 @@
 
 @section('content')
     <!-- Header -->
-    <header>
+    <header class="animated infinite pulse">
         <div class="overlay"></div>
         <div class="container">
             <div class="intro-text">
                 {{-- <div class="intro-lead-in">Una fiesta del más allá</div> --}}
                 <div class="intro-lead-in">La noche mas esperada, por vivos y muertos</div>
-                <div class="intro-heading animated infinite pulse">¿Truco o trato?</div>
+                <div class="intro-heading animated shake">¿Truco o trato?</div>
             </div>
         </div>
     </header>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <img src="img/spider-web-left-corner.svg" class="img-responsive img-centered logo-aecat" alt="Spider web">
-         <img src="img/open-bar.svg" class="img-responsive img-centered open-bar" alt="Barra libre">
+         <img src="img/open-bar.svg" class="img-responsive img-centered open-bar shake infinite animated" alt="Barra libre">
     </section>
 
     <!-- About Section -->
