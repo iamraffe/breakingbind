@@ -30,11 +30,12 @@
             </div>
         </div>
         <img src="img/spider-web-left-corner.svg" class="img-responsive img-centered logo-aecat spider-web" alt="Spider web">
-         <img src="img/open-bar.svg" class="img-responsive img-centered open-bar shake infinite animated" alt="Barra libre">
+        <img src="img/open-bar.svg" class="img-responsive img-centered open-bar shake infinite animated" alt="Barra libre">
     </section>
 
     <!-- About Section -->
     <section id="evento">
+        <img src="img/spider.svg" class="img-responsive img-centered spider" alt="Spider">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -165,6 +166,7 @@
                 </div>
             </div>
         </div>
+        <img src="img/ghost.svg" class="img-responsive img-centered ghost" alt="Friendly ghost">
     </section>
     <aside>
         <iframe id="map-canvas"
@@ -183,8 +185,15 @@
             });
             
             $(window).scroll(function (event) {
-                if($(window).scrollTop() > 400){
+                console.log($(window).scrollTop());
+                if($(window).scrollTop() > 600){
                     $('img.witch').addClass('move-left').css('display', 'block');
+                }
+                if($(window).scrollTop() > 1200){
+                    $('img.spider').addClass('animated slideInDown').css('display', 'block');
+                }
+                if($(window).scrollTop() > 2400){
+                    $('img.ghost').addClass('animated slideInUp').css('display', 'block');
                 }
             });
             $( "select[name='activity']").change(function(){
