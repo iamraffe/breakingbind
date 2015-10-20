@@ -224,9 +224,11 @@ header {
             line-height: 22px;
             margin-bottom: 25px;
             text-shadow: -1px 0 1px #000;
+            margin-top: 35%;
         }
         .intro-heading {
-            .heading-font;
+            font-family: 'Creepster', cursive;
+            color: @halloween;
             font-weight: 700;
             font-size: 50px;
             line-height: 50px;
@@ -267,6 +269,7 @@ header {
 section {
     position: relative;
     padding: 100px 0;
+    overflow: hidden;
     h2.section-heading {
         font-size: 50px;
         margin-top: 0;
@@ -289,12 +292,13 @@ section {
 }
 
 section#organizacion{
-    min-height: 600px;
+    min-height: 300px;
     height: 100%;
     background-image: url('/img/pumpkin-flags.svg'); 
     background-position: top left;
     background-repeat: repeat-x;
     background-size: 25%;
+
     img{
         position: absolute;
         left: -5px;
@@ -329,39 +333,33 @@ section#organizacion{
             -moz-transform: translate(350px,0); /** Firefox **/
         }
         &.move-left {
-            transform: translate(-2500px, -600px);
-            -webkit-transform: translate(-2500px,-600px); /** Safari & Chrome **/
-            -o-transform: translate(-2500px,-600px); /** Opera **/
-            -moz-transform: translate(-2500px,-600px); /** Firefox **/
+            transform: translate(-2500px, -300px);
+            -webkit-transform: translate(-2500px,-300px); /** Safari & Chrome **/
+            -o-transform: translate(-2500px,-300px); /** Opera **/
+            -moz-transform: translate(-2500px,-300px); /** Firefox **/
+        }
+    }
+    @media(max-width:768px) {
+        background-size: 100%;
+        min-height: 0;
+        height: auto;
+        p:last-child{
+            margin-bottom: 150px;
+        }
+        img{
+            &.spider-web{
+                display: none;
+            }
+            &.open-bar{
+                position: absolute;
+                left: 0%;
+                bottom: 0;
+                height: 150px;
+            }
         }
     }
 }
 
-
-// Go - Fit Section
-
-section#go-fit{
-    background-color: @brand-primary;
-    h2, h3, p, a {
-        color: white;
-    }
-    .go-fit-sede-montecarmelo{
-        padding-left: 50px;
-        padding-right: 50px;
-        margin-bottom: 50px;
-    }
-    color: white;
-    font-size: 2.5em;
-    //text-transform: uppercase;
-    font-weight: 700;
-
-    iframe{
-        border: 0;
-        width: 100%;
-        height: 100%;
-        min-height: 250px;
-    }
-}
 
 // Evento Section
 
@@ -450,306 +448,12 @@ section#evento{
 
     }
 
-    // Timeline
-
-    .timeline {
-        list-style: none;
-        padding: 0;
-        position: relative;
-        margin-top: 50px;
-        margin-bottom: 0px;
-        &:before {
-            top: 0;
-            bottom: 0;
-            position: absolute;
-            content: "";
-            width: 2px;
-            background-color: #f1f1f1;
-            left: 40px;
-            margin-left: -1.5px;
-        }
-        > li {
-            margin-bottom: 50px;
-            position: relative;
-            //min-height: 50px;
-            &:before,
-            &:after {
-                content: " ";
-                display: table;
-            }
-            &:after {
-                clear: both;
-            }
-            .timeline-panel {
-                width: 100%;
-                float: right;
-                padding: 0 20px 0 100px;
-                position: relative;
-                text-align: left;
-                &:before {
-                    border-left-width: 0;
-                    border-right-width: 15px;
-                    left: -15px;
-                    right: auto;
-                }
-                &:after {
-                    border-left-width: 0;
-                    border-right-width: 14px;
-                    left: -14px;
-                    right: auto;
-                }
-            }
-            .timeline-image {
-                left: 0;
-                margin-left: 0;
-                width: 25px;
-                height: 25px;
-                position: absolute;
-                z-index: 100;
-                background-color: @brand-primary;
-                color: white;
-                border-radius: 100%;
-                border: 7px solid #f1f1f1;
-                text-align: center;
-                h4 {
-                    font-size: 10px;
-                    margin-top: 12px;
-                    line-height: 14px;
-                }
-
-                @media(max-width: 768px){
-                    margin-left: 27.5px;
-                }
-            }
-            &.timeline-inverted > .timeline-panel {
-                float: right;
-                text-align: left;
-                padding: 0 20px 0 100px;
-                &:before {
-                    border-left-width: 0;
-                    border-right-width: 15px;
-                    left: -15px;
-                    right: auto;
-                }
-                &:after {
-                    border-left-width: 0;
-                    border-right-width: 14px;
-                    left: -14px;
-                    right: auto;
-                }
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        .timeline-heading {
-            h4 {
-                margin-top: 0;
-                color: inherit;
-                &.subheading {
-                    cursor: pointer;
-                    text-transform: none;
-
-                    &:hover, &:focus, &:active{
-                        color: @halloween;
-                    }
-                }
-            }
-        }
-        .timeline-body {
-            display: none;
-
-            > p,
-            > ul {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    @media(min-width:768px) {
-        .timeline {
-            &:before {
-                left: 50%;
-            }
-            > li {
-                margin-bottom: 100px;
-                //min-height: 100px;
-                .timeline-panel {
-                    width: 41%;
-                    float: left;
-                    padding: 0 20px 20px 30px;
-                    text-align: right;
-                }
-                .timeline-image {
-                    width: 25px;
-                    height: 25px;
-                    left: 50%;
-                    margin-left: -12.5px;
-                    h4 {
-                        font-size: 13px;
-                        margin-top: 16px;
-                        line-height: 18px;
-                    }
-                }
-                &.timeline-inverted > .timeline-panel {
-                    float: right;
-                    text-align: left;
-                    padding: 0 30px 20px 20px;
-                }
-            }
-        }
-    }
-
-    @media(min-width:992px) {
-        .timeline {
-            > li {
-                //min-height: 150px;
-                .timeline-panel {
-                    padding: 0 20px 20px;
-                }
-                .timeline-image {
-                    width: 25px;
-                    height: 25px;
-                    left: 50%;
-                    margin-left: -12.5px;
-                    h4 {
-                        font-size: 18px;
-                        margin-top: 30px;
-                        line-height: 26px;
-                    }
-                }
-                &.timeline-inverted > .timeline-panel {
-                    padding: 0 20px 20px;
-                }
-            }
-        }
-    }
-
-    @media(min-width:1200px) {
-        .timeline {
-            > li {
-                //min-height: 170px;
-                .timeline-panel {
-                    padding: 0 20px 20px 100px;
-                }
-                .timeline-image {
-                    width: 25px;
-                    height: 25px;
-                    left: 50%;
-                    margin-left: -12.5px;
-                    h4 {
-                        margin-top: 40px;
-                    }
-                }
-                &.timeline-inverted > .timeline-panel {
-                    padding: 0 100px 20px 20px;
-                }
-            }
-        }
+    @media(max-width:768px) {
+        background-size: 40%;
     }
 
     img.efecto-mariposa-logo{
         margin-top: 50px;
-    }
-}
-
-// Rifa Solidaria Section
-
-section#rifa-solidaria{
-    padding-top: 0;
-
-    button.btn-panel.rifa{
-        margin: 0 auto;
-        display: block;
-    }
-
-    img.raffle-prize{
-        max-height: 350px;
-        margin-bottom: -25px;
-    }
-
-    table{
-        thead{
-            tr{
-                background-color: @halloween;
-                text-transform: uppercase;
-                color: white;
-                font-family: 'Amatic SC', cursive;
-                font-weight: bold;
-                font-size: 2.5em;
-            }
-        }
-        tbody{
-            tr{
-                border-color: lighten(@brand-primary, 10%);
-                font-family: 'Amatic SC', cursive;
-                font-size: 1.75em;
-            }
-        }
-    }
-
-    .slideDownForm{
-        margin-top: 50px;
-        display: none;
-
-        .form-group {
-            margin-bottom: 25px;
-            label{
-                display: block;
-                text-align: center;
-            }
-
-            input,
-            textarea,
-            select {
-                padding: 20px;
-                border-radius: 0;
-            }
-            input.form-control,
-            select.form-control {
-                height: auto;
-            }
-            textarea.form-control {
-                height: 236px;
-            }
-
-            .paypal-logo{
-                width: 350px;
-                padding: 35px;
-            }
-            .wire-transfer{
-                height: 150px;
-            }
-        }
-        .form-control:focus {
-            border-color: @brand-primary;
-            box-shadow: none;
-        }
-        ::-webkit-input-placeholder {
-           .heading-font;
-           font-weight: 700;
-           color: @placeholder-text;
-        }
-        :-moz-placeholder { /* Firefox 18- */
-           .heading-font;
-           font-weight: 700;
-           color: @placeholder-text;
-        }
-        ::-moz-placeholder {  /* Firefox 19+ */
-           .heading-font;
-           font-weight: 700;
-           color: @placeholder-text;
-        }
-        :-ms-input-placeholder {  
-           .heading-font;
-           font-weight: 700;
-           color: @placeholder-text;
-        }
-        .text-danger {
-            color: @brand-danger;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
     }
 }
 
@@ -807,6 +511,9 @@ section#contacto {
         text-transform: uppercase;
         font-weight: 700;
     }
+    @media(max-width:768px) {
+        background-size: 100%;
+    }
 }
 
 // Footer
@@ -832,6 +539,9 @@ footer {
         line-height: 40px;
         .heading-font;
         text-transform: none;
+    }
+    @media(max-width:768px) {
+        background-size: 30%;
     }
 }
 
@@ -869,77 +579,7 @@ ul.social-buttons {
     outline: none;
 }
 
-.portfolio-modal {
-    .modal-content {
-        border-radius: 0;
-        background-clip: border-box;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: none;
-        min-height: 100%;
-        padding: 100px 0;
-        text-align: center;
-        h2 {
-            margin-bottom: 15px;
-            font-size: 3em;
-        }
-        p {
-            margin-bottom: 30px;
-        }
-        p.item-intro {
-            margin: 20px 0 30px;
-            .serif-font;
-            font-style: italic;
-            font-size: 16px;
-        }
-        ul.list-inline {
-            margin-bottom: 30px;
-            margin-top: 0;
-        }
-        img {
-            margin-bottom: 30px;
-        }
-    }
-    .close-modal {
-        position: absolute;
-        width:75px;
-        height:75px;
-        background-color:transparent;
-        top: 25px;
-        right: 25px;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.3;
-        }
-        .lr {
-            height:75px;
-            width:1px;
-            margin-left:35px;
-            background-color:@gray-darkest;
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            /* IE 9 */
-            -webkit-transform: rotate(45deg);
-            /* Safari and Chrome */
-            z-index:1051;
-            .rl {
-                height:75px;
-                width:1px;
-                background-color:@gray-darkest;
-                transform: rotate(90deg);
-                -ms-transform: rotate(90deg);
-                /* IE 9 */
-                -webkit-transform: rotate(90deg);
-                /* Safari and Chrome */
-                z-index:1052;
-            }
-        }
-    }
-    .modal-backdrop {
-        opacity: 0;
-        display: none;
-    }
-}
+
 
 // Highlight Color Customization
 
@@ -978,6 +618,10 @@ body {
     background-image: url('/img/pumpkin-and-ghosts-2.svg'); 
     background-position: top left;
     background-size: 10%;
+
+    @media(max-width:768px) {
+        background-size: 40%;
+    }
 }
 
 aside{

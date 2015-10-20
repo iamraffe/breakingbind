@@ -12606,10 +12606,11 @@ header .intro-text .intro-lead-in {
   line-height: 22px;
   margin-bottom: 25px;
   text-shadow: -1px 0 1px #000;
+  margin-top: 35%;
 }
 header .intro-text .intro-heading {
-  font-family: 'Eater', cursive;
-  text-transform: uppercase;
+  font-family: 'Creepster', cursive;
+  color: #ff7f01;
   font-weight: 700;
   font-size: 50px;
   line-height: 50px;
@@ -12641,6 +12642,7 @@ header .intro-text .intro-heading {
 section {
   position: relative;
   padding: 100px 0;
+  overflow: hidden;
 }
 section h2.section-heading {
   font-size: 50px;
@@ -12661,7 +12663,7 @@ section h3.section-subheading {
   }
 }
 section#organizacion {
-  min-height: 600px;
+  min-height: 300px;
   height: 100%;
   background-image: url('/img/pumpkin-flags.svg');
   background-position: top left;
@@ -12708,36 +12710,32 @@ section#organizacion img.move-right {
   /** Firefox **/
 }
 section#organizacion img.move-left {
-  transform: translate(-2500px, -600px);
-  -webkit-transform: translate(-2500px, -600px);
+  transform: translate(-2500px, -300px);
+  -webkit-transform: translate(-2500px, -300px);
   /** Safari & Chrome **/
-  -o-transform: translate(-2500px, -600px);
+  -o-transform: translate(-2500px, -300px);
   /** Opera **/
-  -moz-transform: translate(-2500px, -600px);
+  -moz-transform: translate(-2500px, -300px);
   /** Firefox **/
 }
-section#go-fit {
-  background-color: #000;
-  color: white;
-  font-size: 2.5em;
-  font-weight: 700;
-}
-section#go-fit h2,
-section#go-fit h3,
-section#go-fit p,
-section#go-fit a {
-  color: white;
-}
-section#go-fit .go-fit-sede-montecarmelo {
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-bottom: 50px;
-}
-section#go-fit iframe {
-  border: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 250px;
+@media (max-width: 768px) {
+  section#organizacion {
+    background-size: 100%;
+    min-height: 0;
+    height: auto;
+  }
+  section#organizacion p:last-child {
+    margin-bottom: 150px;
+  }
+  section#organizacion img.spider-web {
+    display: none;
+  }
+  section#organizacion img.open-bar {
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    height: 150px;
+  }
 }
 section#evento {
   background-image: url('/img/pumpkin-and-ghosts-2.svg');
@@ -12825,275 +12823,13 @@ section#evento .slideDownForm .text-danger {
   text-transform: uppercase;
   font-weight: 700;
 }
-section#evento .timeline {
-  list-style: none;
-  padding: 0;
-  position: relative;
-  margin-top: 50px;
-  margin-bottom: 0px;
-}
-section#evento .timeline:before {
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  content: "";
-  width: 2px;
-  background-color: #f1f1f1;
-  left: 40px;
-  margin-left: -1.5px;
-}
-section#evento .timeline > li {
-  margin-bottom: 50px;
-  position: relative;
-}
-section#evento .timeline > li:before,
-section#evento .timeline > li:after {
-  content: " ";
-  display: table;
-}
-section#evento .timeline > li:after {
-  clear: both;
-}
-section#evento .timeline > li .timeline-panel {
-  width: 100%;
-  float: right;
-  padding: 0 20px 0 100px;
-  position: relative;
-  text-align: left;
-}
-section#evento .timeline > li .timeline-panel:before {
-  border-left-width: 0;
-  border-right-width: 15px;
-  left: -15px;
-  right: auto;
-}
-section#evento .timeline > li .timeline-panel:after {
-  border-left-width: 0;
-  border-right-width: 14px;
-  left: -14px;
-  right: auto;
-}
-section#evento .timeline > li .timeline-image {
-  left: 0;
-  margin-left: 0;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  z-index: 100;
-  background-color: #000;
-  color: white;
-  border-radius: 100%;
-  border: 7px solid #f1f1f1;
-  text-align: center;
-}
-section#evento .timeline > li .timeline-image h4 {
-  font-size: 10px;
-  margin-top: 12px;
-  line-height: 14px;
-}
 @media (max-width: 768px) {
-  section#evento .timeline > li .timeline-image {
-    margin-left: 27.5px;
-  }
-}
-section#evento .timeline > li.timeline-inverted > .timeline-panel {
-  float: right;
-  text-align: left;
-  padding: 0 20px 0 100px;
-}
-section#evento .timeline > li.timeline-inverted > .timeline-panel:before {
-  border-left-width: 0;
-  border-right-width: 15px;
-  left: -15px;
-  right: auto;
-}
-section#evento .timeline > li.timeline-inverted > .timeline-panel:after {
-  border-left-width: 0;
-  border-right-width: 14px;
-  left: -14px;
-  right: auto;
-}
-section#evento .timeline > li:last-child {
-  margin-bottom: 0;
-}
-section#evento .timeline .timeline-heading h4 {
-  margin-top: 0;
-  color: inherit;
-}
-section#evento .timeline .timeline-heading h4.subheading {
-  cursor: pointer;
-  text-transform: none;
-}
-section#evento .timeline .timeline-heading h4.subheading:hover,
-section#evento .timeline .timeline-heading h4.subheading:focus,
-section#evento .timeline .timeline-heading h4.subheading:active {
-  color: #ff7f01;
-}
-section#evento .timeline .timeline-body {
-  display: none;
-}
-section#evento .timeline .timeline-body > p,
-section#evento .timeline .timeline-body > ul {
-  margin-bottom: 0;
-}
-@media (min-width: 768px) {
-  section#evento .timeline:before {
-    left: 50%;
-  }
-  section#evento .timeline > li {
-    margin-bottom: 100px;
-  }
-  section#evento .timeline > li .timeline-panel {
-    width: 41%;
-    float: left;
-    padding: 0 20px 20px 30px;
-    text-align: right;
-  }
-  section#evento .timeline > li .timeline-image {
-    width: 25px;
-    height: 25px;
-    left: 50%;
-    margin-left: -12.5px;
-  }
-  section#evento .timeline > li .timeline-image h4 {
-    font-size: 13px;
-    margin-top: 16px;
-    line-height: 18px;
-  }
-  section#evento .timeline > li.timeline-inverted > .timeline-panel {
-    float: right;
-    text-align: left;
-    padding: 0 30px 20px 20px;
-  }
-}
-@media (min-width: 992px) {
-  section#evento .timeline > li .timeline-panel {
-    padding: 0 20px 20px;
-  }
-  section#evento .timeline > li .timeline-image {
-    width: 25px;
-    height: 25px;
-    left: 50%;
-    margin-left: -12.5px;
-  }
-  section#evento .timeline > li .timeline-image h4 {
-    font-size: 18px;
-    margin-top: 30px;
-    line-height: 26px;
-  }
-  section#evento .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 20px 20px;
-  }
-}
-@media (min-width: 1200px) {
-  section#evento .timeline > li .timeline-panel {
-    padding: 0 20px 20px 100px;
-  }
-  section#evento .timeline > li .timeline-image {
-    width: 25px;
-    height: 25px;
-    left: 50%;
-    margin-left: -12.5px;
-  }
-  section#evento .timeline > li .timeline-image h4 {
-    margin-top: 40px;
-  }
-  section#evento .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 100px 20px 20px;
+  section#evento {
+    background-size: 40%;
   }
 }
 section#evento img.efecto-mariposa-logo {
   margin-top: 50px;
-}
-section#rifa-solidaria {
-  padding-top: 0;
-}
-section#rifa-solidaria button.btn-panel.rifa {
-  margin: 0 auto;
-  display: block;
-}
-section#rifa-solidaria img.raffle-prize {
-  max-height: 350px;
-  margin-bottom: -25px;
-}
-section#rifa-solidaria table thead tr {
-  background-color: #ff7f01;
-  text-transform: uppercase;
-  color: white;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-  font-size: 2.5em;
-}
-section#rifa-solidaria table tbody tr {
-  border-color: #1a1a1a;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.75em;
-}
-section#rifa-solidaria .slideDownForm {
-  margin-top: 50px;
-  display: none;
-}
-section#rifa-solidaria .slideDownForm .form-group {
-  margin-bottom: 25px;
-}
-section#rifa-solidaria .slideDownForm .form-group label {
-  display: block;
-  text-align: center;
-}
-section#rifa-solidaria .slideDownForm .form-group input,
-section#rifa-solidaria .slideDownForm .form-group textarea,
-section#rifa-solidaria .slideDownForm .form-group select {
-  padding: 20px;
-  border-radius: 0;
-}
-section#rifa-solidaria .slideDownForm .form-group input.form-control,
-section#rifa-solidaria .slideDownForm .form-group select.form-control {
-  height: auto;
-}
-section#rifa-solidaria .slideDownForm .form-group textarea.form-control {
-  height: 236px;
-}
-section#rifa-solidaria .slideDownForm .form-group .paypal-logo {
-  width: 350px;
-  padding: 35px;
-}
-section#rifa-solidaria .slideDownForm .form-group .wire-transfer {
-  height: 150px;
-}
-section#rifa-solidaria .slideDownForm .form-control:focus {
-  border-color: #000;
-  box-shadow: none;
-}
-section#rifa-solidaria .slideDownForm ::-webkit-input-placeholder {
-  font-family: 'Eater', cursive;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #bbbbbb;
-}
-section#rifa-solidaria .slideDownForm :-moz-placeholder {
-  /* Firefox 18- */
-  font-family: 'Eater', cursive;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #bbbbbb;
-}
-section#rifa-solidaria .slideDownForm ::-moz-placeholder {
-  /* Firefox 19+ */
-  font-family: 'Eater', cursive;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #bbbbbb;
-}
-section#rifa-solidaria .slideDownForm :-ms-input-placeholder {
-  font-family: 'Eater', cursive;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #bbbbbb;
-}
-section#rifa-solidaria .slideDownForm .text-danger {
-  color: #e74c3c;
-  text-transform: uppercase;
-  font-weight: 700;
 }
 section#contacto {
   background-image: url('/img/ghosts-flags.svg');
@@ -13155,6 +12891,11 @@ section#contacto .text-danger {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media (max-width: 768px) {
+  section#contacto {
+    background-size: 100%;
+  }
+}
 footer {
   padding: 25px 0;
   text-align: center;
@@ -13181,6 +12922,11 @@ footer ul.quicklinks {
   text-transform: uppercase;
   text-transform: none;
 }
+@media (max-width: 768px) {
+  footer {
+    background-size: 30%;
+  }
+}
 ul.social-buttons {
   margin-bottom: 0;
 }
@@ -13206,74 +12952,6 @@ ul.social-buttons li a:active {
 .btn.active,
 .btn:active:focus {
   outline: none;
-}
-.portfolio-modal .modal-content {
-  border-radius: 0;
-  background-clip: border-box;
-  box-shadow: none;
-  border: none;
-  min-height: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-.portfolio-modal .modal-content h2 {
-  margin-bottom: 15px;
-  font-size: 3em;
-}
-.portfolio-modal .modal-content p {
-  margin-bottom: 30px;
-}
-.portfolio-modal .modal-content p.item-intro {
-  margin: 20px 0 30px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-size: 16px;
-}
-.portfolio-modal .modal-content ul.list-inline {
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-.portfolio-modal .modal-content img {
-  margin-bottom: 30px;
-}
-.portfolio-modal .close-modal {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  background-color: transparent;
-  top: 25px;
-  right: 25px;
-  cursor: pointer;
-}
-.portfolio-modal .close-modal:hover {
-  opacity: 0.3;
-}
-.portfolio-modal .close-modal .lr {
-  height: 75px;
-  width: 1px;
-  margin-left: 35px;
-  background-color: #222;
-  transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  /* IE 9 */
-  -webkit-transform: rotate(45deg);
-  /* Safari and Chrome */
-  z-index: 1051;
-}
-.portfolio-modal .close-modal .lr .rl {
-  height: 75px;
-  width: 1px;
-  background-color: #222;
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(90deg);
-  /* Safari and Chrome */
-  z-index: 1052;
-}
-.portfolio-modal .modal-backdrop {
-  opacity: 0;
-  display: none;
 }
 ::-moz-selection {
   text-shadow: none;
@@ -13307,6 +12985,11 @@ body {
   background-image: url('/img/pumpkin-and-ghosts-2.svg');
   background-position: top left;
   background-size: 10%;
+}
+@media (max-width: 768px) {
+  .terms-and-conditions {
+    background-size: 40%;
+  }
 }
 aside {
   height: 400px;

@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <img src="img/spider-web-left-corner.svg" class="img-responsive img-centered logo-aecat" alt="Spider web">
+        <img src="img/spider-web-left-corner.svg" class="img-responsive img-centered logo-aecat spider-web" alt="Spider web">
          <img src="img/open-bar.svg" class="img-responsive img-centered open-bar shake infinite animated" alt="Barra libre">
     </section>
 
