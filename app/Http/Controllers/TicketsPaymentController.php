@@ -261,9 +261,9 @@ class TicketsPaymentController extends Controller
 
         $objectId = $request->session()->pull('objectId');
 
-        $this->registration->delete($objectId);
+        $this->tickets->delete($objectId);
 
-        flash()->overlay('Ha cancelado el pago', 'Notificacion sobre su pago', 'error');
+        flash()->overlay('El pago no ha sido completado', 'Ha cancelado el pago', 'error');
 
         return redirect('/');
     }
