@@ -103,3 +103,13 @@
 [20-10-2015 06:17:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
 [20-10-2015 06:17:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment/PAY-5VL55892BW416305JKYS5YZA/execute
 [20-10-2015 06:17:26] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-10-2015 06:56:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[20-10-2015 06:56:32] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-10-2015 06:56:32] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[20-10-2015 06:56:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[20-10-2015 06:56:48] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[20-10-2015 06:56:49] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-10-2015 06:56:49] PayPal\Core\PayPalHttpConnection: INFO	: GET https://api.sandbox.paypal.com/v1/payments/payment/PAY-5TM006341C9750210KYS6LIQ
+[20-10-2015 06:56:51] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-10-2015 06:56:51] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment/PAY-5TM006341C9750210KYS6LIQ/execute
+[20-10-2015 06:56:53] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200

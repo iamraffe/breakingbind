@@ -160,23 +160,23 @@ class TicketsPaymentController extends Controller
             $email = $ticket['email'];
             $name = $ticket['name'];
 
-            // \Mail::send('emails.ticket.wire-transfer',
-            //     $ticket,
-            //    function($msg) use ($email, $name)
-            //     {
-            //       $msg->to($email, $name);
-            //       $msg->from('info@fundaseth.es', 'Fundaseth')->subject('¡Su compra ha sido procesada correctamente!');
-            //     });
+            \Mail::send('emails.wire-transfer',
+                $ticket,
+               function($msg) use ($email, $name)
+                {
+                  $msg->to($email, $name);
+                  $msg->from('info@breakingbind.com', 'Breaking Bind')->subject('¡Tu compra ha sido procesada correctamente!');
+                });
 
-            // \Mail::send('emails.notification',
-            //     $ticket,
-            //    function($msg) use ($email, $name)
-            //     {
-            //       $msg->from($email, $name);
-            //       $msg->to('info@fundaseth.es', 'Fundaseth')->subject('Nueva compra de entradas para la fiesta de Halloween 2015 [TRANSFERENCIA BANCARIA]');
-            //     });
+            \Mail::send('emails.notification',
+                $ticket,
+               function($msg) use ($email, $name)
+                {
+                  $msg->from($email, $name);
+                  $msg->to('info@breakingbind.com', 'Breaking Bind')->subject('Nueva compra de entradas para la fiesta de Halloween 2015 [TRANSFERENCIA BANCARIA]');
+                });
 
-            flash()->overlay('Por favor, revise su correo electrónico '.$email.' y siga las instrucciones para finalizar su inscripción.', '¡Su compra ha sido procesada correctamente!');
+            flash()->overlay('Por favor, revisa tu correo electrónico '.$email.' y sigue las instrucciones para realizar el pago de las entradas.', '¡Tu compra ha sido procesada correctamente!');
 
             return redirect('/');
         }
@@ -227,30 +227,30 @@ class TicketsPaymentController extends Controller
 
         $this->tickets->update($objectId, ['status' => true, 'amountDue' => 0.00, 'ticketNumbers' => $ticketNumbers]);
 
-        \Mail::send('emails.raffle.paypal',
+        \Mail::send('emails.paypal',
             $ticket,
            function($msg) use ($email, $name, $tickets, $ticketNumbers)
             {
               $msg->to($email, $name);
-              $msg->from('info@fundaseth.es', 'Fundaseth')->subject('¡Su compra ha sido procesada correctamente!');
+              $msg->from('info@breakingbind.com', 'Breaking Bind')->subject('¡Tu compra ha sido procesada correctamente!');
               for($i = 0; $i<$tickets; $i++){
                 $msg->attach('sold-tickets/Halloween2015'.$ticketNumbers[$i].'.pdf');
               }
 
             });
 
-        \Mail::send('emails.raffle.wire-transfer-ok',
+        \Mail::send('emails.payment-approved',
             $ticket,
            function($msg) use ($email, $name, $tickets, $ticketNumbers)
             {
               $msg->from($email, $name);
-              $msg->to('info@fundaseth.es', 'Fundaseth')->subject('Nueva compra de entradas a la fiesta de Halloween 2015 [PAYPAL]');
+              $msg->to('info@breakingbind.com', 'Breaking Bind')->subject('Nueva compra de entradas a la fiesta de Halloween 2015 [PAYPAL]');
               for($i = 0; $i<$tickets; $i++){
                 $msg->attach('sold-tickets/Halloween2015'.$ticketNumbers[$i].'.pdf');
               }
             });
 
-        flash()->overlay('Muchas gracias por su compra. Recuerde asistir a fiesta de Halloween el Sábado 31 de Octubre a partir de las 23:30h', '¡Su compra ha sido procesada correctamente!');
+        flash()->overlay('Muchas gracias por tu compra. Recuerda asistir a fiesta de Halloween el Sábado 31 de Octubre a partir de las 23:30h', '¡Tu compra ha sido procesada correctamente!');
 
         return redirect('/');
 
