@@ -22,7 +22,7 @@
     <![endif]-->
 </head>
 <body id="page-top" class='{{ $bodyClass or "index" }}'>
-    
+    <h1 style="display:none">Breaking Bind</h1>
 
     @include('partials._nav')
 

@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">5eaking &sect;nd</a>
+                <a class="navbar-brand page-scroll" href="#page-top" title="Inicio">5eaking &sect;nd</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +31,7 @@
                         <a class="page-scroll" href="#contacto">Contacto</a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/breakingbind"><i class="fa fa-facebook-square"></i></a>
+                        <a href="https://www.facebook.com/breakingbind" title="facebook"><span class="fa fa-facebook-square"></span></a>
                     </li>
                 </ul>
             </div>

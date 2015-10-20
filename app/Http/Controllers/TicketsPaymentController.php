@@ -66,8 +66,8 @@ class TicketsPaymentController extends Controller
         // dynamic configuration instead of using sdk_config.ini
 
         $this->_apiContext->setConfig(array(
-            'mode' => 'sandbox',
-            'service.EndPoint' => 'https://api.sandbox.paypal.com',
+            'mode' => 'live',
+            'service.EndPoint' => 'https://api.live.paypal.com',
             'http.ConnectionTimeOut' => 30,
             'log.LogEnabled' => true,
             'log.FileName' => __DIR__.'/../PayPal.log',

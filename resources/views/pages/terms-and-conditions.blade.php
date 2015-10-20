@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{!! csrf_token() !!}"/>
     <title>Breaking Bind</title>
+    <meta name="description" content="Si eres atrevi@, quieres conocer gente y viajar, disfrutar de esta vida, porque ¿no hay otra verdad? Entonces esta es tú página.">
     @yield('css')
     <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -59,7 +60,7 @@
                     <tbody>
                         <tr>
                             <td colspan="3">
-                                <p class="center"><b>TIPOS DE COOKIES</b></p>
+                                <p class="center"><strong>TIPOS DE COOKIES</strong></p>
                             </td>
                         </tr>
                         <tr>
@@ -107,11 +108,11 @@
                 <p>Cookie técnica propia y de sesión, así como cookie de análisis de terceros, servicio ofrecido por Google Analytics.</p>
                 <p>Asimismo, FUNDASETH SL informa al usuario de que tiene la posibilidad de configurar su navegador de modo que se le informe de la recepción de cookies, pudiendo, si así lo desea,  impedir que sean instaladas en su disco duro.</p>
                 <p>A continuación le proporcionamos los enlaces de diversos navegadores, a través de los cuales podrá realizar dicha configuración:</p>
-                <p><b><i>Firefox desde aquí:</i></b> <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a><br />
-                <b><i>Chrome desde aquí:</i></b> <a href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647</a><br />
-                <b><i>Explorer desde aquí:</i></b> <a href="http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10">http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10</a><br />
-                <b><i>Safari desde aquí:</i></b> <a href="http://support.apple.com/kb/ph5042">http://support.apple.com/kb/ph5042</a></p>
-                <p><b><i>Opera desde aquí:</i></b> <a href="http://help.opera.com/windows/11.50/es-es/cookies.html">http://help.opera.com/Windows/11.50/es-ES/cookies.html</a></p>
+                <p><strong><span>Firefox desde aquí:</span></strong> <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a><br />
+                <strong><span>Chrome desde aquí:</span></strong> <a href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647</a><br />
+                <strong><span>Explorer desde aquí:</span></strong> <a href="http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10">http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10</a><br />
+                <strong><span>Safari desde aquí:</span></strong> <a href="http://support.apple.com/kb/ph5042">http://support.apple.com/kb/ph5042</a></p>
+                <p><strong><span>Opera desde aquí:</span></strong> <a href="http://help.opera.com/windows/11.50/es-es/cookies.html">http://help.opera.com/Windows/11.50/es-ES/cookies.html</a></p>
             </div>
             <div class="row">
                 <h3 class="red-color">Protección de datos</h3>

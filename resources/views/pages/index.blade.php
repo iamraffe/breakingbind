@@ -72,21 +72,21 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Nombre completo *" id="name" required data-validation-required-message="Por favor, introduzca su nombre completo.">
+                                            <input type="text" class="form-control" name="name" placeholder="Nombre completo *" required data-validation-required-message="Por favor, introduzca su nombre completo.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Correo electrónico *" id="email" required data-validation-required-message="Por favor, introduzca un correo electrónico.">
+                                            <input type="email" class="form-control" name="email" placeholder="Correo electrónico *" required data-validation-required-message="Por favor, introduzca un correo electrónico.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group">
-                                            <input type="tel" class="form-control" name="phone" placeholder="Teléfono *" id="phone" required data-validation-required-message="Por favor, introduzca un número telefónico.">
+                                            <input type="tel" class="form-control" name="phone" placeholder="Teléfono *" required data-validation-required-message="Por favor, introduzca un número telefónico.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control" name="comments" placeholder="Comentarios (Opcional)" id="message"></textarea>
+                                            <textarea class="form-control" name="comments" placeholder="Comentarios (Opcional)"></textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" class="contact" id="contactForm" novalidate>
-                        <input type="hidden" id="url" placeholder="contact">
+                        <input type="hidden" id="url">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -170,7 +170,7 @@
     </section>
     <aside>
         <iframe id="map-canvas"
-        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPx86ikIoQg0R41r4yzvYgJM&key=AIzaSyAlnKDtzJoIfHbA99KRyXgrxZc134M53wk" allowfullscreen></iframe>
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPx86ikIoQg0R41r4yzvYgJM&amp;key=AIzaSyAlnKDtzJoIfHbA99KRyXgrxZc134M53wk" allowfullscreen></iframe>
     </aside>
 @endsection
 
