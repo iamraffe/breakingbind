@@ -47,13 +47,29 @@
                 <div class="col-lg-12 text-center">
                     <div class="row slideDownForm">
                         <div class="col-lg-12">
-                            <form role="form" method="POST" action="{{ url('tickets-payment') }}">
+                            <form id="buy-tickets" role="form" method="POST" action="{{ url('tickets-payment') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="hidden" name="payment" value="paypal">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="tickets">Número de entradas</label>
+                                            <input type="text" class="form-control" name="name" placeholder="Nombre completo *" required data-validation-required-message="Por favor, introduzca su nombre completo.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder="Correo electrónico *" required data-validation-required-message="Por favor, introduzca un correo electrónico.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control" name="phone" placeholder="Teléfono *" required data-validation-required-message="Por favor, introduzca un número telefónico.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="dni" placeholder="DNI/NIE *" required data-validation-required-message="Por favor, introduzca su nombre completo.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <select class="form-control" id="tickets" name="tickets" required data-validation-required-message="Por favor, seleccione una cantidad.">
                                                 <option value="" disabled selected>Seleccione la cantidad deseada</option>
                                                 <option value="1">1</option>
@@ -69,22 +85,6 @@
                                             </select>
                                             <p class="help-block text-danger"></p>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Nombre completo *" required data-validation-required-message="Por favor, introduzca su nombre completo.">
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Correo electrónico *" required data-validation-required-message="Por favor, introduzca un correo electrónico.">
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="tel" class="form-control" name="phone" placeholder="Teléfono *" required data-validation-required-message="Por favor, introduzca un número telefónico.">
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <textarea class="form-control" name="comments" placeholder="Comentarios (Opcional)"></textarea>
                                             <p class="help-block text-danger"></p>
@@ -177,6 +177,37 @@
 @section('scripts')
 
     <script type="text/javascript">
+        jQuery.validator.addMethod("DNI", function(value, element) {
+        var cadenadni="TRWAGMYFPDXBNJZSQVHLCKET";
+        var let = value.substr(value.length-1,1);
+        if(/^([0-9]{8})*[a-zA-Z]+$/.test(value)){
+        var numero = value.substr(0,value.length-1) % 23;
+        letra=cadenadni.substring(numero,numero+1);
+        if (letra==let)
+        return true;
+        return false;
+        } else if (/^[XYZ]{1}/.test(value)) {
+        var reemplazar = new Array("X", "Y", "Z")
+        var por = new Array("0", "1", "2");
+        numero=value
+        for (var i=0; i<reemplazar.length; i++) {
+        numero = numero.replace(reemplazar[i].toUpperCase(), por[i]);
+        }
+        var numero = numero.substr(0,value.length-1) % 23;
+        var letra = cadenadni.substring(numero, numero + 1);
+        if (letra==let)
+        return true;
+        return false;
+        }
+        return this.optional(element);
+        
+    }, "Por favor escribe un DNI válido");
+        $('form#buy-tickets').validate({
+          rules: {
+            'dni': { DNI: true }
+          }
+        });
+
 
 
         $(function() {

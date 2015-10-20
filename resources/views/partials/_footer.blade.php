@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="{{ url('/terms-and-conditions') }}">Condiciones de uso</a>
+                        <li><a href="{{ url('/terms-and-conditions') }}" title="Condiciones de uso">Condiciones de uso</a>
                         </li>
                     </ul>
                 </div>

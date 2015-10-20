@@ -10,6 +10,7 @@
         <div>Hemos recibido el pago para las {{ $tickets }} entradas adjuntos en este correo.</div>
         <div>La información del usuario que realizó la compra:</div>
         <div>Nombre: {{ $name }}</div>
+        <div>DNI: {{ $dni }}</div>
         <div>Email: {{ $email }}</div>
         <div>Teléfono: {{ $phone }}</div>
         <div>Número de Entradas: {{ $tickets }}</div>

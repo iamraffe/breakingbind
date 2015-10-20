@@ -19,16 +19,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#organizacion">¡Come, bebe y espanta!</a>
+                        <a class="page-scroll" href="#organizacion" title="¡Come, bebe y espanta!">¡Come, bebe y espanta!</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#evento">Asiste</a>
+                        <a class="page-scroll" href="#evento" title="Asiste">Asiste</a>
                     </li>
-{{--                     <li>
-                        <a class="page-scroll" href="#patrocina">Patrocina</a>
-                    </li> --}}
                     <li>
-                        <a class="page-scroll" href="#contacto">Contacto</a>
+                        <a class="page-scroll" href="#contacto" title="Contacto">Contacto</a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/breakingbind" title="facebook"><span class="fa fa-facebook-square"></span></a>

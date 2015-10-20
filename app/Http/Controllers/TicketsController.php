@@ -45,6 +45,7 @@ class TicketsController extends Controller
             $ticket['email'] = $ticketObject->email;
             $ticket['phone'] = $ticketObject->phone;
             $ticket['comments'] = $ticketObject->comments;
+            $ticket['dni'] = $ticketObject->dni;
             $ticket['status'] = true;
 
             $name = $ticketObject->name;

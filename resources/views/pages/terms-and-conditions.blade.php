@@ -25,7 +25,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 header-container">
-            <h1 class="header-title text-center"><a href="{{ url('/') }}">Breaking Bind</a></h1>
+            <h1 class="header-title text-center"><a href="{{ url('/') }}" title="Inicio">Breaking Bind</a></h1>
             <h2 class="header-title text-center">Condiciones de uso</h2>
         </div>
     </div>

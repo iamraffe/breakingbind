@@ -66,8 +66,8 @@ class TicketsPaymentController extends Controller
         // dynamic configuration instead of using sdk_config.ini
 
         $this->_apiContext->setConfig(array(
-            'mode' => 'live',
-            'service.EndPoint' => 'https://api.live.paypal.com',
+            'mode' => 'sandbox',
+            'service.EndPoint' => 'https://api.sandbox.paypal.com',
             'http.ConnectionTimeOut' => 30,
             'log.LogEnabled' => true,
             'log.FileName' => __DIR__.'/../PayPal.log',
@@ -87,13 +87,15 @@ class TicketsPaymentController extends Controller
 
         $ticket['tickets'] =  intval($request->input('tickets'));
 
-        $ticket['payment'] = floatval($request->input('payment'));
+        $ticket['payment'] = $request->input('payment');
 
         $ticket['name'] = ucwords(strtolower($request->input('name')));
 
         $ticket['email'] = $request->input('email');
 
         $ticket['phone'] = $request->input('phone');
+
+        $ticket['dni'] = $request->input('dni');
 
         $ticket['comments'] = empty($request->input('comments')) ? "El usuario no ha dejado ningún comentario." : $request->input('comments');
 
@@ -208,6 +210,7 @@ class TicketsPaymentController extends Controller
         $ticket['email'] = $ticketObject->email;
         $ticket['phone'] = $ticketObject->phone;
         $ticket['comments'] = $ticketObject->comments;
+        $ticket['dni'] =  $ticketObject->dni;
         $ticket['status'] = true;
 
         $name = $ticketObject->name;

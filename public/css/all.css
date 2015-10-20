@@ -13572,6 +13572,7 @@ section#organizacion img.open-bar {
   max-height: 300px;
 }
 section#organizacion img.witch {
+  z-index: 999999999;
   top: 75%;
   left: 110%;
   position: absolute;

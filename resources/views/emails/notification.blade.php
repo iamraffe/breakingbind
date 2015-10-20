@@ -9,6 +9,7 @@
         <div><br></div>
         <div>Alguien ha "comprado" unas entradas para la Fiesta de Halloween. Como ha elegido pagar con transferencia, sólo recibes este correo.</div>
         <div>Nombre: {{ $name }}</div>
+        <div>DNI: {{ $dni }}</div>
         <div>Email: {{ $email }}</div>
         <div>Teléfono: {{ $phone }}</div>
         <div>Número de Entradas: {{ $tickets }}</div>
