@@ -13721,6 +13721,18 @@ section#evento .slideDownForm .text-danger {
   text-transform: uppercase;
   font-weight: 700;
 }
+section#evento .slideDownForm select {
+  font-family: 'Eater', cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #bbbbbb;
+}
+section#evento .slideDownForm select option {
+  font-family: 'Eater', cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #bbbbbb;
+}
 @media (max-width: 768px) {
   section#evento {
     background-size: 40%;
