@@ -196,24 +196,11 @@ class TicketsPaymentController extends Controller
 
         $objectId = $request->session()->pull('objectId');
 
-        $this->tickets->update($objectId, ['status' => true, 'amountDue' => 0.00]);
+        // $this->tickets->update($objectId, ['status' => true, 'amountDue' => 0.00]);
 
         $ticketObject = $this->tickets->findBy('objectId', $objectId);
 
-        $name = $ticketObject->name;
-
-        $email = $ticketObject->email;
-
         $ticket['name'] = $ticketObject->name;
-
-        $ticket['tickets'] = $ticketObject->tickets;
-
-        $tickets = $ticketObject->tickets;
-
-        $allTickets = $this->tickets->all();
-
-        $currentNumber = $allTickets->last()->number;
-
         $ticket['tickets'] = $ticketObject->tickets;
         $ticket['amountDue'] = $ticketObject->amountDue;
         $ticket['payment'] = $ticketObject->payment;
@@ -223,43 +210,47 @@ class TicketsPaymentController extends Controller
         $ticket['comments'] = $ticketObject->comments;
         $ticket['status'] = true;
 
-        // for($i = 1; $i<=$tickets; $i++){
+        $name = $ticketObject->name;
 
-        //     $pdf = \App::make('dompdf.wrapper');
-        //     $pdf->loadHTML(view('templates.rifa.raffle-ticket')->with('number', $currentNumber+$i));
-        //     $pdf->save('tickets/RifaSolidariaNo'.($currentNumber+$i).'.pdf');
+        $email = $ticketObject->email;
 
-        //     $pdf = \App::make('dompdf.wrapper');
-        //     $pdf->loadHTML(view('templates.rifa.raffle-talon')->with('number', $currentNumber+$i));
-        //     $pdf->save('tickets/TalonRifaNo'.($currentNumber+$i).'.pdf');
+        $tickets = $ticketObject->tickets;
 
-        //     $this->tickets->create(['number' => ($currentNumber+$i), 'buyer' => $raffleObject->name]);
-        // }
+        $ticketNumbers = [];
 
-        // \Mail::send('emails.raffle.paypal',
-        //     $raffle,
-        //    function($msg) use ($email, $name, $tickets, $currentNumber)
-        //     {
-        //       $msg->to($email, $name);
-        //       $msg->from('info@fundaseth.es', 'Fundaseth')->subject('¡Su compra ha sido procesada correctamente!');
-        //       for($i = 1; $i<=$tickets; $i++){
-        //         $msg->attach('tickets/RifaSolidariaNo'.($currentNumber+$i).'.pdf');
-        //       }
+        for($i = 0; $i<$tickets; $i++){
+          array_push($ticketNumbers, rand(10, 99).rand(100, 999));
+          $pdf = \App::make('dompdf.wrapper');
+          $pdf->loadHTML(view('templates.ticket')->with('number', $ticketNumbers[$i]));
+          $pdf->save('sold-tickets/Halloween2015'.$ticketNumbers[$i].'.pdf');
+        }
 
-        //     });
+        $this->tickets->update($objectId, ['status' => true, 'amountDue' => 0.00, 'ticketNumbers' => $ticketNumbers]);
 
-        // \Mail::send('emails.raffle.wire-transfer-ok',
-        //     $raffle,
-        //    function($msg) use ($email, $name, $tickets, $currentNumber)
-        //     {
-        //       $msg->from($email, $name);
-        //       $msg->to('info@fundaseth.es', 'Fundaseth')->subject('Nueva compra de billetes de la Rifa Solidaria [PAYPAL]');
-        //       for($i = 1; $i<=$tickets; $i++){
-        //         $msg->attach('tickets/TalonRifaNo'.($currentNumber+$i).'.pdf');
-        //       }
-        //     });
+        \Mail::send('emails.raffle.paypal',
+            $ticket,
+           function($msg) use ($email, $name, $tickets, $ticketNumbers)
+            {
+              $msg->to($email, $name);
+              $msg->from('info@fundaseth.es', 'Fundaseth')->subject('¡Su compra ha sido procesada correctamente!');
+              for($i = 0; $i<$tickets; $i++){
+                $msg->attach('sold-tickets/Halloween2015'.$ticketNumbers[$i].'.pdf');
+              }
 
-        flash()->overlay('Muchas gracias por su compra. Recuerde asistir a la Rifa Solidaria el Sábado 26 de Septiembre a las 19.00 horas.', '¡Su compra ha sido procesada correctamente!');
+            });
+
+        \Mail::send('emails.raffle.wire-transfer-ok',
+            $ticket,
+           function($msg) use ($email, $name, $tickets, $ticketNumbers)
+            {
+              $msg->from($email, $name);
+              $msg->to('info@fundaseth.es', 'Fundaseth')->subject('Nueva compra de entradas a la fiesta de Halloween 2015 [PAYPAL]');
+              for($i = 0; $i<$tickets; $i++){
+                $msg->attach('sold-tickets/Halloween2015'.$ticketNumbers[$i].'.pdf');
+              }
+            });
+
+        flash()->overlay('Muchas gracias por su compra. Recuerde asistir a fiesta de Halloween el Sábado 31 de Octubre a partir de las 23:30h', '¡Su compra ha sido procesada correctamente!');
 
         return redirect('/');
 
