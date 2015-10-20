@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="_token" content="{!! csrf_token() !!}"/>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>Breaking Bind</title>
     <meta name="description" content="Si eres atrevi@, quieres conocer gente y viajar, disfrutar de esta vida, porque ¿no hay otra verdad? Entonces esta es tú página.">
     @yield('css')
@@ -21,7 +22,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="page-top" class='{{ $bodyClass or "index" }}'>
+<body id="page-top">
     <h1 style="display:none">Breaking Bind</h1>
 
     @include('partials._nav')

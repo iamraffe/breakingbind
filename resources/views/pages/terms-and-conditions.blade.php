@@ -108,11 +108,11 @@
                 <p>Cookie técnica propia y de sesión, así como cookie de análisis de terceros, servicio ofrecido por Google Analytics.</p>
                 <p>Asimismo, FUNDASETH SL informa al usuario de que tiene la posibilidad de configurar su navegador de modo que se le informe de la recepción de cookies, pudiendo, si así lo desea,  impedir que sean instaladas en su disco duro.</p>
                 <p>A continuación le proporcionamos los enlaces de diversos navegadores, a través de los cuales podrá realizar dicha configuración:</p>
-                <p><strong><span>Firefox desde aquí:</span></strong> <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a><br />
-                <strong><span>Chrome desde aquí:</span></strong> <a href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647</a><br />
-                <strong><span>Explorer desde aquí:</span></strong> <a href="http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10">http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10</a><br />
-                <strong><span>Safari desde aquí:</span></strong> <a href="http://support.apple.com/kb/ph5042">http://support.apple.com/kb/ph5042</a></p>
-                <p><strong><span>Opera desde aquí:</span></strong> <a href="http://help.opera.com/windows/11.50/es-es/cookies.html">http://help.opera.com/Windows/11.50/es-ES/cookies.html</a></p>
+                <p><strong><span>Firefox desde aquí:</span></strong> <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" title="Firefox">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a><br />
+                <strong><span>Chrome desde aquí:</span></strong> <a href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647" title="Chrome">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647</a><br />
+                <strong><span>Explorer desde aquí:</span></strong> <a href="http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10" title="Explorer">http://windows.microsoft.com/es-es/internet-explorer/delete-manage-cookies#ie=ie-10</a><br />
+                <strong><span>Safari desde aquí:</span></strong> <a href="http://support.apple.com/kb/ph5042" title="Safari">http://support.apple.com/kb/ph5042</a></p>
+                <p><strong><span>Opera desde aquí:</span></strong> <a href="http://help.opera.com/windows/11.50/es-es/cookies.html" title="Opera">http://help.opera.com/Windows/11.50/es-ES/cookies.html</a></p>
             </div>
             <div class="row">
                 <h3 class="red-color">Protección de datos</h3>
