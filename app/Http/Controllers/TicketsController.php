@@ -87,7 +87,7 @@ class TicketsController extends Controller
                 }
               });
 
-            flash()->overlay('El usuario ha sido notificado del cambio de estado en su inscripción.', '¡La inscripción ha sido aprobada correctamente!');
+            flash()->success('¡La inscripción ha sido aprobada correctamente!', 'El usuario ha sido notificado del cambio de estado en su inscripción.');
 
             return response()->json(['Status' => 'OK', 'Message' => 'Registration approved & updated']);
         }

@@ -53,7 +53,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="tickets">Número de billetes</label>
+                                            <label for="tickets">Número de entradas</label>
                                             <select class="form-control" id="tickets" name="tickets" required data-validation-required-message="Por favor, seleccione una cantidad.">
                                                 <option value="" disabled selected>Seleccione la cantidad deseada</option>
                                                 <option value="1">1</option>

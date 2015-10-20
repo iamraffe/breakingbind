@@ -22,28 +22,7 @@
     <![endif]-->
 </head>
 <body id="page-top" class='{{ $bodyClass or "index" }}'>
-
-    @if (Session::get('flash_notification.overlay'))
-        <div id="flash-overlay-modal" class="modal fade {{ $modalClass or '' }}">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-                        <h4 class="modal-title">{{ Session::get('flash_notification.title') }}</h4>
-                    </div>
-
-                    <div class="modal-body">
-                        <p>{{ Session::get('flash_notification.message') }}</p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
+    
 
     @include('partials._nav')
 
@@ -51,9 +30,7 @@
     @include('partials._footer')
     <!-- Scripts -->
     {!! HTML::script('js/all.js') !!}
-    <script>
-        $('#flash-overlay-modal').modal();
-    </script>
+    @include('partials._flash')
     @yield('scripts')
 </body>
 </html>

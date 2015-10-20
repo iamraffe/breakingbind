@@ -176,7 +176,7 @@ class TicketsPaymentController extends Controller
                   $msg->to('info@breakingbind.com', 'Breaking Bind')->subject('Nueva compra de entradas para la fiesta de Halloween 2015 [TRANSFERENCIA BANCARIA]');
                 });
 
-            flash()->overlay('Por favor, revisa tu correo electrónico '.$email.' y sigue las instrucciones para realizar el pago de las entradas.', '¡Tu compra ha sido procesada correctamente!');
+            flash()->overlay('Tu compra ha sido procesada correctamente!', 'Por favor, revisa tu correo electronico '.$email.' y sigue las instrucciones para realizar el pago de las entradas.');
 
             return redirect('/');
         }
@@ -250,7 +250,7 @@ class TicketsPaymentController extends Controller
               }
             });
 
-        flash()->overlay('Muchas gracias por tu compra. Recuerda asistir a fiesta de Halloween el Sábado 31 de Octubre a partir de las 23:30h', '¡Tu compra ha sido procesada correctamente!');
+        flash()->overlay('Tu compra ha sido procesada correctamente!', 'Muchas gracias por tu compra. Recuerda asistir a fiesta de Halloween el Sabado 31 de Octubre a partir de las 23:30h');
 
         return redirect('/');
 
@@ -263,7 +263,7 @@ class TicketsPaymentController extends Controller
 
         $this->registration->delete($objectId);
 
-        flash()->overlay('Ha cancelado el pago.', 'Notificación sobre su pago.');
+        flash()->overlay('Ha cancelado el pago', 'Notificacion sobre su pago', 'error');
 
         return redirect('/');
     }
