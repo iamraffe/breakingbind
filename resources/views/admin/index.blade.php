@@ -5,7 +5,7 @@ Dashboard |
 @endsection
 
 @section('content')
-    <div class="row">
+{{--     <div class="row">
       <div class="col-md-2 col-sm-6 col-xs-12">
         <div class="info-box">
           <span class="info-box-icon bg-yellow">
@@ -110,12 +110,12 @@ Dashboard |
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
+    </div> --}}
+{{--     <div class="row">
       @include('admin.partials._registrationsTable', ['allRegistrations' => $allRegistrations])
       @include('admin.partials._raffleTable', ['allRaffle' => $allRaffle])
       @include('admin.partials._raffleTickets', ['allTickets' => $allTickets])
-    </div>
+    </div> --}}
 @endsection
 
 @section('scripts')

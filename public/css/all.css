@@ -12566,8 +12566,9 @@ fieldset[disabled] .btn-xl.active {
     border: none;
   }
   .navbar-default .navbar-brand {
-    font-size: 2.5em;
+    font-size: 3em;
     transition: all 0.3s;
+    padding: 15px 0;
   }
   .navbar-default.navbar-shrink {
     background-color: #ff7f01;
@@ -12772,6 +12773,11 @@ section#evento img.spider {
   position: absolute;
   top: 0;
   left: 25px;
+  -webkit-animation-duration: 1s !important;
+  animation-duration: 1s !important;
+  -vendor-animation-delay: 0s !important;
+  -webkit-animation-delay: 0s !important;
+  animation-delay: 0s !important;
 }
 section#evento button.btn-panel {
   border-radius: 0;
@@ -12873,6 +12879,11 @@ section#contacto img.ghost {
   bottom: 0;
   left: 0;
   max-height: 300px;
+  -webkit-animation-duration: 3s !important;
+  animation-duration: 3s !important;
+  -vendor-animation-delay: 0s !important;
+  -webkit-animation-delay: 0s !important;
+  animation-delay: 0s !important;
 }
 section#contacto .section-heading,
 section#contacto .section-subheading {

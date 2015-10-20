@@ -47,7 +47,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="row slideDownForm">
                         <div class="col-lg-12">
-                            <form role="form" method="POST" action="{{ url('raffle-payment') }}">
+                            <form role="form" method="POST" action="{{ url('tickets-payment') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="payment" value="paypal">
                                 <div class="row">

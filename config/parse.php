@@ -33,7 +33,8 @@ return [
     */
 
     'subclasses' => [
-        // '\App\ParseClasses\CustomClass'
+        '\App\ParseClasses\Ticket',
+        '\App\ParseClasses\Content',
     ],
 
 
@@ -53,6 +54,7 @@ return [
     |
     */
     'repositories' => [
-        // '\App\Repositories\ParseCustomClassRepository' => '\App\Repositories\Contracts\CustomClassRepository',
+        '\App\Repositories\ParseTicketRepository' => '\App\Repositories\Contracts\TicketRepository',
+        '\App\Repositories\ParseContentRepository' => '\App\Repositories\Contracts\ContentRepository',
     ],
 ];

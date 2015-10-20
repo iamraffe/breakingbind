@@ -2,35 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Repositories\ParseContentRepository;
+use App\Repositories\ParseTicketRepository;
 use Illuminate\Http\Request;
 use Parse\ParseObject;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Repositories\ParseRegistrationRepository;
-use App\Repositories\ParseActivitiesRepository;
-use App\Repositories\ParseRaffleRepository;
-use App\Repositories\ParseTicketsRepository;
+
 
 class AdminController extends Controller
 {
 
-    private $registrations;
-
-    private $activities;
-
-    private $raffle;
-
     private $tickets;
 
-    public function __construct(ParseRegistrationRepository $parseRegistrationRepository, ParseActivitiesRepository $parseActivitiesRepository, ParseRaffleRepository $raffle, ParseTicketsRepository $tickets)
+    private $contents;
+
+    public function __construct(ParseTicketRepository $tickets, ParseContentRepository $contents)
     {
-        $this->registrations = $parseRegistrationRepository;
-
-        $this->activities = $parseActivitiesRepository;
-
-        $this->raffle = $raffle;
 
         $this->tickets = $tickets;
+
+        $this->contents = $contents;
     }
 
     /**
@@ -41,68 +33,7 @@ class AdminController extends Controller
     public function index()
     {
 
-        $allRegistrations = $this->registrations->all(['activity']);
-
-        dd($allRegistrations->sortBy('createdAt.dates'));
-
-        $allRaffle = $this->raffle->all();
-
-        $allTickets = $this->tickets->all();
-
-        $allTimeslots = $allRegistrations->groupBy('timeslot');
-
-        $timeslots = ['10.00 AM - 11.00 AM', '11.00 AM - 12.00 PM', '12.00 PM - 01.00 PM', '01.00 PM - 02.00 PM', '06.00 PM - 07.00 PM'];
-
-        foreach ($timeslots as $timeslot) {
-            if(strcmp($timeslot, '06.00 PM - 07.00 PM') == 0){
-                $count[$timeslot][0][0] = 0;
-                $count[$timeslot][0][1] = 0;
-                $count[$timeslot][1][0] = 0;
-                $count[$timeslot][1][1] = 0;
-            }
-            else{
-                $count[$timeslot][0] = 0;
-                $count[$timeslot][1] = 0;
-            }
-        }
-
-        $count['total'] = 0;
-
-        foreach ($allTimeslots as $timeslot) {
-            foreach($timeslot as $key => $registration){
-                if(strcmp($registration->timeslot, '06.00 PM - 07.00 PM') == 0){
-                    if(strcmp($registration->activity->name, 'Zumba Familiar') == 0){
-                        if($registration->status){
-                            $count[$registration->timeslot][0][0]+=($registration->adults + $registration->children);
-                            $count['total']+=($registration->adults + $registration->children);
-                        }
-                        $count[$registration->timeslot][0][1]+=($registration->adults + $registration->children);
-                    }
-                    else{
-                        if($registration->status){
-                            $count[$registration->timeslot][1][0]+=($registration->adults + $registration->children);
-                            $count['total']+=($registration->adults + $registration->children);
-                        }
-                        $count[$registration->timeslot][1][1]+=($registration->adults + $registration->children);
-                    }
-                }
-                else{
-                    if($registration->status){
-                        $count[$registration->timeslot][0]+=($registration->adults + $registration->children);
-                        $count['total']+=($registration->adults + $registration->children);
-                    }
-                    $count[$registration->timeslot][1]+=($registration->adults + $registration->children);
-                }
-
-            }
-        }
-
-        return view('admin.index')->with([
-                        'allRegistrations' => $allRegistrations,
-                        'allTimeslots' => $count,
-                        'allRaffle' => $allRaffle,
-                        'allTickets' => $allTickets,
-                    ]);
+        return view('admin.index');
     }
 
     public function pdfDownload()
@@ -116,7 +47,7 @@ class AdminController extends Controller
     {
         return \Excel::create(\Carbon\Carbon::now()->format('jFYhis'), function($excel) {
 
-            $excel->setTitle('Inscripciones Efecto Mariposa');
+            $excel->setTitle('Entradas Breaking Bind - Halloween 2015');
 
             $excel->setCreator('Fundaseth, S.L.')
                   ->setCompany('Fundaseth, S.L.');

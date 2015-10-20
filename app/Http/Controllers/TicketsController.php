@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Repositories\ParseContentRepository;
+use App\Repositories\ParseRaffleRepository;
+use App\Repositories\ParseTicketRepository;
+use App\Repositories\ParseTicketsRepository;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Repositories\ParseTicketsRepository;
-use App\Repositories\ParseRaffleRepository;
-
-class RaffleController extends Controller
+class TicketsController extends Controller
 {
-    private $raffle;
-
     private $tickets;
 
-    public function __construct(ParseRaffleRepository $parseRaffleRepository, ParseTicketsRepository $tickets)
+    private $contents;
+
+    public function __construct(ParseTicketRepository $tickets, ParseContentRepository $contents)
     {
-        $this->raffle = $parseRaffleRepository;
 
         $this->tickets = $tickets;
+        
+        $this->contents = $contents;
     }
 
     /**
@@ -32,14 +34,6 @@ class RaffleController extends Controller
     public function update(Request $request, $objectId)
     {
         if($request->ajax()){
-
-            /*$allTickets = $this->tickets->all();
-
-            //dd($allTickets);
-
-            $currentNumber = $allTickets->last()->number;
-
-            dd($currentNumber);*/
 
             $raffle['amountDue'] = 0;
 
