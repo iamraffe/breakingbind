@@ -263,7 +263,7 @@ class TicketsPaymentController extends Controller
 
         $this->tickets->delete($objectId);
 
-        flash()->overlay('El pago no ha sido completado', 'Ha cancelado el pago', 'error');
+        flash()->error('El pago no ha sido completado', 'Ha cancelado el pago');
 
         return redirect('/');
     }
