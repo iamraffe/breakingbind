@@ -133,6 +133,7 @@
         </div>
     </div>
   </div>
+    {!! HTML::script('js/all.js') !!}
     @include('partials._footer')
     @yield('scripts')
 </body>
