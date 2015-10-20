@@ -37,8 +37,8 @@ class TicketsPaymentController extends Controller
      *string $_ClientId
      *string $_ClientSecret
      */
-    private $_ClientId = 'Ado1qKeiZ1O0WfKEVOEtL8-62O3ue1p5aY1ah9ymttQZY7T1FUgZh0g-N1MKz0BgMGP6qKVeU64BXL0m';
-    private $_ClientSecret ='EBQLAqwZenfMRncbcknHNdIcJH18ETwmPI3Feo4B8oGgGZhSyLUgkg2Itg72-MQCT7GeJa96laHybjUa';
+    private $_ClientId = 'AQ-vXJfkQjyW_mCVgBffHHvZ--Tuu7mo0HOLe1PfkUmBam4M3BZPOZzOjJiIWh3pr5yrc_GEMrcx3Tpb';
+    private $_ClientSecret = 'EBqlGp0uZ7Vq4wPBNScHzd5m7qvjUFrZee7FijUQt-3d81icNUnUNYSCOnMuB-PVPc-Hh_uVI2awbAjR';
 
     /*
      *   These construct set the SDK configuration dynamiclly,
@@ -266,7 +266,7 @@ class TicketsPaymentController extends Controller
 
         $this->tickets->delete($objectId);
 
-        flash()->error('El pago no ha sido completado', 'Ha cancelado el pago');
+        flash()->error('El pago no ha sido completado', 'Has cancelado el pago');
 
         return redirect('/');
     }
