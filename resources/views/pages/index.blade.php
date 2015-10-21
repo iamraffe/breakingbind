@@ -25,7 +25,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
-                  <p>Nosotros nos encargamos de preparar el mejor ambiente para que puedas pasar una noche inolvidable. Música, barra libre y canapés. Tú sólo debes traer el disfraz más aterrador que puedas encontrar.</p>
+                  <p>Nosotros nos encargamos de preparar el mejor ambiente para que puedas pasar una noche inolvidable. Música, barra libre y picoteo. Tú sólo debes traer el disfraz más aterrador que puedas encontrar.</p>
+                  <p>Podrás comer y beber todo lo que quieras por 55 euros. Además, sólo por venir podrás participar en el concurso de disfraces donde se sorteará un masaje oriental.</p>
+                  <p>Y como en todos nuestros eventos conocerás gente nueva en un lugar agradable e íntimo para conectar y ampliar tu grupo de amigos. Y quién sabe a lo mejor encontrarás a tu media calabaza.</p>
                 </div>
             </div>
         </div>
@@ -40,7 +42,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Asiste</h2>
-                    <h3 class="section-subheading text-muted">El Sábado 31 de Octubre en Argüelles desde las 11.00 PM hasta las 4.00 AM, si sobrevives.</h3>
+                    <h3 class="section-subheading text-muted">El Sábado 31 de Octubre en Gaztambide, 24 desde las 11.00 PM hasta las 4.00 AM, si sobrevives.</h3>
                 </div>
             </div>
             <div class="row">

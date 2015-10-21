@@ -13539,14 +13539,13 @@ section h3.section-subheading {
 }
 section#organizacion {
   min-height: 300px;
-  height: 100%;
   background-image: url('/img/pumpkin-flags.svg');
   background-position: top left;
   background-repeat: repeat-x;
   background-size: 25%;
 }
 section#organizacion p:last-child {
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 }
 section#organizacion img {
   position: absolute;
