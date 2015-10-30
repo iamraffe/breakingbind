@@ -49,7 +49,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="row slideDownForm">
                         <div class="col-lg-12">
-                            <form id="buy-tickets" role="form" method="POST" action="{{ url('tickets-payment') }}">
+                            <form id="buy-tickets" role="form">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-md-6">
