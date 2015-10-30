@@ -211,6 +211,10 @@
         });
 
 
+        $('form#buy-tickets').on('submit', function(e){
+            e.preventDefault();
+            alert("Ya no se permiten inscripciones al evento de Halloween. El 21 de Noviembre organizaremos otro evento, en breve podrás encontrar los detalles en esta web.");
+        });
 
         $(function() {
             $('button.trigger-zombie-hands').hover(function(){
